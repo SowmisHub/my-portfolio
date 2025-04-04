@@ -1,1 +1,533 @@
-hlo this is sowmika
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website Using HTML & CSS</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+
+        body {
+            background: #1f242d;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding: 25px 9%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+
+        .navbar.logo {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin-left: 35px;
+        }
+
+        .navbar ul li a {
+            font-size: 20px;
+            font-weight: 500;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover a {
+            color: #7cf03d;
+        }
+
+        .home {
+            height: 100vh;
+            display: flex;
+            border: 2px solid #7cf03d;
+            border-radius: 10px; 
+            align-items: center;
+            padding: 60px 9% 0;
+            color: #fff;
+        }
+
+        .home-info h1 {
+            font-size: 55px;
+        }
+
+        .home-info h2 {
+            font-size: 32px;
+            margin: 10px;
+        }
+
+        .home-info h2 span {
+            display: inline-block;
+            color: transparent;
+            -webkit-text-stroke: .7px #7cf03d;
+            animation: display-text 3s linear infinite;
+            animation-delay: calc(-1s*var(--i));
+        }
+
+        @keyframes display-text {
+            25%, 100% {
+                display: none;
+            }
+        }
+
+        .home-info p {
+            font-size: 16px;
+            margin: 10px 0 25px;
+        }
+
+        .home-info .btn-sci {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background: #7cf03d;
+            border-radius: 40px;
+            box-shadow: 0 0 10px #7cf03d;
+            font-size: 16px;
+            color: black;
+            font-weight: 600;
+            transition: 0.5s;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #7cf03d;
+            box-shadow: none;
+        }
+
+        .home-info .btn-sci.sci {
+            margin-left: 20px;
+        }
+
+        .home-info .btn-sci .sci a {
+            display: inline-flex;
+            padding: 8px;
+            border: 2px solid #7cf03d;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #7cf03d;
+            margin: 0 8px;
+        }
+
+        .home-info .btn-sci .sci a:hover {
+            background: #7cf03d;
+            color: #1f242d;
+            box-shadow: 0 0 10px #7cf03d;
+        }
+
+        .home-img .img-box {
+            width: 28vw;
+            height: 28vw;
+            border-radius: 50%;
+            background: linear-gradient(to right, #1f242d, #7cf03d);
+            padding: 5px;
+            margin-left: 100px;
+        }
+
+        .home-img .img-box .img-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #1f242d;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .home-img .img-box .img-item img {
+            width: 85%;
+            object-fit: cover;
+            mix-blend-mode: lighten;
+        }
+
+        .about {
+            background: url('back.jpg');
+            background-size: cover;
+            padding: 60px 9%;
+            color: #fff;
+            border:2px solid rgb(171, 109, 109);
+            border-radius: 10px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #fff;
+        }
+
+        .about p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #ddd;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .content {
+            padding: 30px;
+            width: 70%;
+            max-width: 800px;
+            border: 5px solid rgb(134, 38, 83);
+            border-radius: 10px;
+            background-image: linear-gradient(45deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
+        }
+        .education{
+            background: url('back.jpg');
+            background-size: cover;
+            padding: 60px 9%;
+            color: #fff;
+            border:2px solid rgb(171, 109, 109);
+            border-radius: 10px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            border: 5px solid rgb(134, 38, 83);
+            border-radius: 10px;
+            max-width: 900px;
+            background: #ff7e5f;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .heading {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1f242d;
+            margin-bottom: 40px;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background:linear-gradient(45deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-info {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .education-info h3 {
+            font-size: 1.5rem;
+            color: #1f242d;
+            font-weight: 600;
+        }
+
+        .education-info p {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .education-info .year {
+            font-size: 1rem;
+            color: #7cf03d;
+            font-weight: 500;
+        }
+
+        .education-info .institution {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .percentage {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ff5733;
+            text-align: right;
+            min-width: 100px;
+        }
+        .skills{
+            background: url('back.jpg');
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container2 {
+            max-width: 900px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .container2 h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .skill {
+            background-color: #333;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 120px;
+            text-align: center;
+        }
+
+        .skill i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #7cf03d;
+        }
+
+        .skill h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .projects-section {
+            margin-top: 40px;
+            width: 80%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .project {
+            background-color: #333;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centering the text */
+        }
+
+        .project h3 {
+            font-size: 1.8rem;
+            color: #7cf03d;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #ccc;
+            font-family: 'poppins', sans-serif;
+            font-size: 1rem;
+            text-align: justify; /* Ensure the description is neatly justified */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo"> Welcome to my Portfolio</a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="home-info">
+            <h1>Vemula Sowmika</h1>
+            <h2>I'M 
+                <span style="--i:2;">Frontend developer</span>
+                <span style="--i:1;">Web developer</span>
+            </h2>
+            <p style="line-height: 1.5">I am a motivated recent graduate with a solid foundation in HTML, CSS, Javascript, Python.<br>
+               Eager to apply my knowledge in real-world projects, I am looking to contribute to dynamic teams and to gain hands-on experience. 
+               I am committed to learning and growing in a challenging environment while delivering quality work.</p>
+            <div class="btn-sci">
+                <a href="resume1.pdf" class="btn">My Resume</a>
+                <div class="sci">
+                    <a href="https://github.com/SowmisHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/vemula-sowmika-7b0178349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://www.instagram.com/sowmi_deepu123?igsh=MXE2ajh3OWZ5MHQ5NA=="><i class='bx bxl-instagram' ></i></a>
+                </div>  
+            </div>
+        </div>
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="2ndpicture.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="content">
+            <h1>About Me</h1>
+            <p>
+                My name is V. Sowmika, and I am a self-motivated professional with a Master’s in Computer Applications (MCA) and a Bachelor’s in Computer Science (B.Sc.). I am skilled in HTML, CSS, JavaScript, and Python, and I am eager to apply my knowledge to real-world projects.
+            </p>
+            <p>
+                Although I am in the early stages of my career, I am passionate about learning and improving my skills in web development and programming. I am committed to delivering high-quality work, embracing new challenges, and staying updated with the latest industry trends. My attention to detail and enthusiasm for continuous growth drive me to always strive for excellence in every task I take on.
+            </p>
+            <p>
+                I am excited to contribute to a team, further develop my abilities, and make meaningful contributions to a dynamic organization.
+            </p>
+        </div>
+    </section>
+    <section id="education" class="education">
+        <div class="container">
+            <h1 class="heading">My Education</h1>
+    
+            <!-- MCA -->
+            <div class="education-item">
+                <div class="education-info">
+                    <h3>MCA (Master of Computer Applications)</h3>
+                    <p class="institution">Kakinada Institute of Engineering and Technology</p>
+                    <p class="year">2023 - 2025</p>
+                </div>
+                <div class="percentage">70%</div>
+            </div>
+    
+            <!-- B.Sc Computer Science -->
+            <div class="education-item">
+                <div class="education-info">
+                    <h3>B.Sc Computer Science</h3>
+                    <p class="institution">RK Degree College</p>
+                    <p class="year">2020 - 2023</p>
+                </div>
+                <div class="percentage">89%</div>
+            </div>
+    
+            <!-- Intermediate MPC -->
+            <div class="education-item">
+                <div class="education-info">
+                    <h3>Intermediate (MPC)</h3>
+                    <p class="institution">Sri Chaitanya Junior College</p>
+                    <p class="year">2018 - 2020</p>
+                </div>
+                <div class="percentage">9.67 CGPA</div>
+            </div>
+    
+            <!-- SSC -->
+            <div class="education-item">
+                <div class="education-info">
+                    <h3>SSC</h3>
+                    <p class="institution">Sri Sarada Vidya Peeth</p>
+                    <p class="year">2017 - 2018</p>
+                </div>
+                <div class="percentage">9.3 CGPA</div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="skills">
+        <div class="container2">
+            <!-- Main Heading -->
+            <h1 class="heading">My Skills & Projects</h1>
+    
+            <!-- Skills Section -->
+            <div class="skills-list">
+                <!-- First Row of Skills -->
+                <div class="skill">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-js-square"></i>
+                    <h3>JavaScript</h3>
+                </div>
+            </div>
+    
+            <div class="skills-list">
+                <div class="skill">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-database"></i>
+                    <h3>SQL</h3>
+                </div>
+            </div>
+    
+            <!-- Projects Section -->
+            <div class="projects-section">
+                <div class="project">
+                    <h3>Mini Project: Snake Game (Nokia Mobile)</h3>
+                    <p>This is a simple Snake Game created using Python and Pygame. It replicates the classic Nokia mobile Snake game with basic game mechanics like controlling the snake's movement, increasing length, and avoiding collisions with walls and itself.</p>
+                </div>
+                <div class="project">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>A personal portfolio website created using HTML and CSS. This website showcases my skills, projects, and achievements in a clean, responsive layout. It serves as a digital presence to highlight my work and skills to potential employers or collaborators.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+</body>
+</html>
